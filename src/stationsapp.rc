@@ -1,0 +1,348 @@
+//----------------------------------------------------------------------------
+//  Project Stations
+//  RunTime Software
+//  Copyright © 2007 All Rights Reserved.
+//
+//  SUBSYSTEM:  Stations Application
+//  FILE:     stationsapp.rc
+//  AUTHOR:     Alan Jones
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  All resources defined here.
+//
+//----------------------------------------------------------------------------
+
+#if !defined(WORKSHOP_INVOKED)
+# include <windows.h>
+#endif
+#include "stationsapp.rh"
+
+
+IDM_SDI MENU
+{
+ POPUP "&File"
+ {
+  MENUITEM SEPARATOR
+  MENUITEM SEPARATOR
+  MENUITEM "E&xit\tAlt+F4", CM_EXIT
+ }
+
+ MENUITEM SEPARATOR
+ POPUP "&Help"
+ {
+  MENUITEM "&About...", CM_HELPABOUT
+ }
+
+}
+
+
+// Accelerator table for short-cut to menu commands. (include/owl/editfile.rc)
+//
+IDM_SDI ACCELERATORS 
+{
+ VK_DELETE, CM_EDITCUT, VIRTKEY, SHIFT
+ VK_INSERT, CM_EDITCOPY, VIRTKEY, CONTROL
+ VK_INSERT, CM_EDITPASTE, VIRTKEY, SHIFT
+ VK_DELETE, CM_EDITCLEAR, VIRTKEY, CONTROL
+ VK_BACK, CM_EDITUNDO, VIRTKEY, ALT
+ VK_F3, CM_EDITFINDNEXT, VIRTKEY
+ VK_ADD, CM_ZOOM_IN, VIRTKEY
+ VK_SUBTRACT, CM_ZOOM_OUT, VIRTKEY
+}
+
+
+
+
+
+// Table of help hints displayed in the status bar.
+//
+STRINGTABLE
+BEGIN
+  -1,                   "File/document operations"
+  CM_FILENEW,           "Creates a new window"
+  CM_FILEOPEN,          "Opens a window"
+  CM_FILECLOSE,         "Closes the active document"
+  CM_FILESAVE,          "Saves the active document"
+  CM_FILESAVEAS,        "Saves the active document with a new name"
+  CM_EXIT,              "Quits Stations and prompts to save the documents"
+  CM_EDITUNDO-1,        "Edit operations"
+  CM_EDITUNDO,          "Reverses the last operation"
+  CM_EDITCUT,           "Cuts the selection and puts it on the Clipboard"
+  CM_EDITCOPY,          "Copies the selection and puts it on the Clipboard"
+  CM_EDITPASTE,         "Inserts the Clipboard contents at the insertion point"
+  CM_EDITDELETE,        "Deletes the selection"
+  CM_EDITCLEAR,         "Clears the active document"
+  CM_EDITADD,           "Inserts a new line"
+  CM_EDITEDIT,          "Edits the current line"
+  CM_EDITFIND-1,        "Search/replace operations"
+  CM_EDITFIND,          "Finds the specified text"
+  CM_EDITREPLACE,       "Finds the specified text and changes it"
+  CM_EDITFINDNEXT,      "Finds the next match"
+  CM_HELPABOUT-1,       "Access About"
+  CM_HELPABOUT,         "About the Stations application"
+END
+
+
+//
+// OWL string table
+//
+
+// EditFile (include/owl/editfile.rc and include/owl/editsear.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_CANNOTFIND,       "Cannot find ""%s""."
+  IDS_UNTITLED,         "Document"
+  IDS_UNABLEREAD,       "Unable to read file %s from disk."
+  IDS_UNABLEWRITE,      "Unable to write file %s to disk."
+  IDS_FILECHANGED,      "The text in the %s file has changed.\n\nDo you want to save the changes?"
+  IDS_FILEFILTER,       "Text files|*.txt|AllFiles|*.*|"
+END
+
+
+// Exception string resources (include/owl/except.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_OWLEXCEPTION,     "ObjectWindows Exception"
+  IDS_UNHANDLEDXMSG,    "Unhandled Exception"
+  IDS_OKTORESUME,       "OK to resume?"
+  IDS_UNKNOWNEXCEPTION, "Unknown exception"
+
+  IDS_UNKNOWNERROR,     "Unknown error"
+  IDS_NOAPP,            "No application object"
+  IDS_OUTOFMEMORY,      "Out of memory"
+  IDS_INVALIDMODULE,    "Invalid module specified for window"
+  IDS_INVALIDMAINWINDOW,"Invalid MainWindow"
+  IDS_VBXLIBRARYFAIL,   "VBX Library init failure"
+
+  IDS_INVALIDWINDOW,    "Invalid window %s"
+  IDS_INVALIDCHILDWINDOW,"Invalid child window %s"
+  IDS_INVALIDCLIENTWINDOW,"Invalid client window %s"
+
+  IDS_CLASSREGISTERFAIL,"Class registration fail for window %s"
+  IDS_CHILDREGISTERFAIL,"Child class registration fail for window %s"
+  IDS_WINDOWCREATEFAIL, "Create fail for window %s"
+  IDS_WINDOWEXECUTEFAIL,"Execute fail for window %s"
+  IDS_CHILDCREATEFAIL,  "Child create fail for window %s"
+
+  IDS_MENUFAILURE,      "Menu creation failure"
+  IDS_VALIDATORSYNTAX,  "Validator syntax error"
+  IDS_PRINTERERROR,     "Printer error"
+
+  IDS_LAYOUTINCOMPLETE, "Incomplete layout constraints specified in window %s"
+  IDS_LAYOUTBADRELWIN,  "Invalid relative window specified in layout constraint in window %s"
+
+  IDS_GDIFAILURE,       "GDI failure"
+  IDS_GDIALLOCFAIL,     "GDI allocate failure"
+  IDS_GDICREATEFAIL,    "GDI creation failure"
+  IDS_GDIRESLOADFAIL,   "GDI resource load failure"
+  IDS_GDIFILEREADFAIL,  "GDI file read failure"
+  IDS_GDIDELETEFAIL,    "GDI object %X delete failure"
+  IDS_GDIDESTROYFAIL,   "GDI object %X destroy failure"
+  IDS_INVALIDDIBHANDLE, "Invalid DIB handle %X"
+END
+
+
+// General Window's status bar messages. (include/owl/statusba.rc)
+//
+STRINGTABLE
+BEGIN
+  IDS_MODES             "EXT|CAPS|NUM|SCRL|OVR|REC"
+  IDS_MODESOFF          "   |  |   |  |   |   "
+  SC_SIZE,              "Changes the size of the window"
+  SC_MOVE,              "Moves the window to another position"
+  SC_MINIMIZE,          "Reduces the window to an icon"
+  SC_MAXIMIZE,          "Enlarges the window to it maximum size"
+  SC_RESTORE,           "Restores the window to its previous size"
+  SC_CLOSE,             "Closes the window"
+  SC_TASKLIST,          "Opens task list"
+  SC_NEXTWINDOW,        "Switches to next window"
+END
+
+
+// Validator messages (include/owl/validate.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_VALPXPCONFORM     "Input does not conform to picture:\n""%s"""
+  IDS_VALINVALIDCHAR    "Invalid character in input"
+  IDS_VALNOTINRANGE     "Value is not in the range %ld to %ld."
+  IDS_VALNOTINLIST      "Input is not in valid-list"
+END
+
+
+//
+// Bitmaps used by the speedbar.  Each bitmap is associated with a
+// particular menu command.
+//
+CM_FILENEW BITMAP "new.bmp"
+CM_FILEOPEN BITMAP "open.bmp"
+CM_FILESAVE BITMAP "save.bmp"
+
+CM_EDITUNDO BITMAP "undo.bmp"
+CM_EDITCUT BITMAP "cut.bmp"
+CM_EDITCOPY BITMAP "copy.bmp"
+CM_EDITPASTE BITMAP "paste.bmp"
+
+CM_EDITFIND BITMAP "find.bmp"
+CM_EDITFINDNEXT BITMAP "findnext.bmp"
+
+CM_FILEPRINT BITMAP "print.bmp"
+
+
+//
+// Misc application definitions
+//
+
+// Application ICON
+//
+IDI_SDIAPPLICATION ICON "applsdi.ico"
+
+
+// About box.
+//
+IDD_ABOUT DIALOG 12, 17, 204, 65
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Stations"
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "Version", IDC_VERSION, "STATIC", SS_CENTER | SS_NOPREFIX | WS_CHILD | WS_VISIBLE | WS_GROUP, 2, 14, 200, 8
+ CONTROL "Station selector", -1, "STATIC", SS_CENTER | SS_NOPREFIX | WS_CHILD | WS_VISIBLE | WS_GROUP, 2, 4, 200, 8
+ CONTROL "", IDC_COPYRIGHT, "STATIC", SS_CENTER | SS_NOPREFIX | WS_CHILD | WS_VISIBLE | WS_GROUP, 2, 27, 200, 17
+ CONTROL "", IDC_DEBUG, "STATIC", SS_RIGHT | SS_NOPREFIX | WS_CHILD | WS_VISIBLE | WS_GROUP, 136, 55, 66, 8
+ CONTROL "OK", IDOK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 82, 48, 40, 14
+ CONTROL "Picture1", IDI_STATIONS, "static", SS_BITMAP | WS_CHILD | WS_VISIBLE, 16, 9, 18, 15
+}
+
+
+// Version info.
+//
+#if !defined(__DEBUG_)
+
+// Non-Debug VERSIONINFO
+//
+1 VERSIONINFO 
+FILEVERSION 1, 3, 0, 0
+PRODUCTVERSION 1, 3, 0, 0
+FILEFLAGSMASK 0
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS16
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "040904E4"
+  {
+   VALUE "CompanyName", "RunTime Software\000"
+   VALUE "FileDescription", "Stations for Windows\000"
+   VALUE "FileVersion", "1.0\000"
+   VALUE "InternalName", "Stations\000"
+   VALUE "LegalCopyright", "No Copyright © 2008 Alan Jones.\000"
+   VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+   VALUE "OriginalFilename", "Stations.exe\000"
+   VALUE "ProductName", "Stations\000"
+   VALUE "ProductVersion", "1.3 Level 2008.11.14\000"
+  }
+
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 0x0409, 0x04e4
+ }
+
+}
+
+IDI_STATIONS ICON
+{
+ '00 00 01 00 01 00 10 10 10 00 00 00 00 00 28 01'
+ '00 00 16 00 00 00 28 00 00 00 10 00 00 00 20 00'
+ '00 00 01 00 04 00 00 00 00 00 C0 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00'
+ '00 00 80 00 80 00 80 80 00 00 80 80 80 00 C0 C0'
+ 'C0 00 00 00 FF 00 00 FF 00 00 00 FF FF 00 FF 00'
+ '00 00 FF 00 FF 00 FF FF 00 00 FF FF FF 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 89 99 99 99 99 99 99 90 08 99'
+ '99 99 99 99 99 00 08 99 99 99 99 99 99 00 00 89'
+ '99 99 99 99 90 00 00 89 99 99 99 99 90 00 00 08'
+ '99 99 99 99 00 00 00 00 89 99 99 90 00 00 00 00'
+ '89 99 99 90 00 00 00 00 08 99 99 00 00 00 00 00'
+ '00 89 90 00 00 00 00 00 00 89 90 00 00 00 00 00'
+ '00 08 00 00 00 00 00 00 00 00 00 00 00 00 FF FF'
+ '00 00 FF FF 00 00 00 00 00 00 00 00 00 00 80 01'
+ '00 00 80 01 00 00 C0 03 00 00 C0 03 00 00 E0 07'
+ '00 00 F0 0F 00 00 F0 0F 00 00 F8 1F 00 00 FC 3F'
+ '00 00 FC 3F 00 00 FE 7F 00 00 FF FF 00 00'
+}
+
+
+
+
+
+IDD_PROGRESS DIALOG 10, 10, 159, 26
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Progress"
+FONT 10, "MS Sans Serif"
+{
+ CONTROL "", IDC_PROGRESS_MSG, "static", SS_LEFT | SS_SUNKEN | WS_CHILD | WS_VISIBLE, 9, 4, 138, 12
+}
+
+IDD_DIALOG1 DIALOG 0, 0, 240, 120
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CONTEXTHELP | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION ""
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "", IDC_PROGRESS_MSG, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 32, 26, 128, 26, WS_EX_STATICEDGE
+}
+
+
+
+
+
+
+#else
+
+// Debug VERSIONINFO
+//
+1 VERSIONINFO LOADONCALL MOVEABLE
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK VS_FF_DEBUG | VS_FF_PRERELEASE | VS_FF_PATCHED | VS_FF_PRIVATEBUILD | VS_FF_SPECIALBUILD
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+#if defined(BI_PLAT_WIN32)
+FILEOS VOS__WINDOWS32
+#else
+FILEOS VOS__WINDOWS16
+#endif
+FILETYPE VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    // Language type = U.S. English(0x0409) and Character Set = Windows, Multilingual(0x04e4)
+    BLOCK "040904E4"              // Matches VarFileInfo Translation hex value.
+    BEGIN
+      VALUE "CompanyName", "RunTime Software\000"
+      VALUE "FileDescription", "Stations for Windows\000"
+      VALUE "FileVersion", "1.0\000"
+      VALUE "InternalName", "Stations\000"
+      VALUE "LegalCopyright", "Copyright © 2007 All Rights Reserved.\000"
+      VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+      VALUE "OriginalFilename", "Stations.exe\000"
+      VALUE "ProductName", "Stations\000"
+      VALUE "ProductVersion", "1.0\000"
+      VALUE "SpecialBuild", "Debug Version\000"
+      VALUE "PrivateBuild", "Built by Alan Jones\000"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04e4    // U.S. English(0x0409) & Windows Multilingual(0x04e4) 1252
+  END
+END
+
+#endif

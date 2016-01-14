@@ -1,0 +1,15 @@
+#define Acknowledgements 1000
+#define Calibration 1001
+#define Continuous_Data_Storage 1002
+#define Devices 1003
+#define Event_Screen 1004
+#define Extracting_Earthquakes 1005
+#define Filter_Help 1006
+#define Helicorder_Screen 1007
+#define Introduction 1008
+#define Opening_an_event 1009
+#define Revision_History 1010
+#define SAC_PEPP_and_PSN_Files 1011
+#define Setup 1012
+#define Station_Information 1013
+#define Tutorial 1014

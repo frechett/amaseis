@@ -1,0 +1,405 @@
+//----------------------------------------------------------------------------
+//  Project Upload
+//  
+//  Copyright © 1997. All Rights Reserved.
+//
+//  SUBSYSTEM:  Upload Application
+//  FILE:     uplodapp.rc
+//  AUTHOR:     
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  All resources defined here.
+//
+//----------------------------------------------------------------------------
+
+#if !defined(WORKSHOP_INVOKED)
+# include <windows.h>
+#endif
+#define IDI_MDIAPPLICATION	1001
+#include "uplodapp.rh"
+
+
+IDM_SDI MENU
+BEGIN
+  POPUP "&File"
+  BEGIN
+    MENUITEM "&New", CM_FILENEW
+    MENUITEM "&Open...", CM_FILEOPEN
+    MENUITEM SEPARATOR
+    MENUITEM "&Save", CM_FILESAVE, GRAYED
+    MENUITEM "Save &As...", CM_FILESAVEAS, GRAYED
+    MENUITEM SEPARATOR
+    MENUITEM "E&xit\tAlt+F4", CM_EXIT
+  END
+
+  MENUITEM SEPARATOR
+
+  POPUP "&Edit"
+  BEGIN
+    MENUITEM "&Undo\tAlt+BkSp", CM_EDITUNDO, GRAYED
+    MENUITEM SEPARATOR
+    MENUITEM "Cu&t\tShift+Del", CM_EDITCUT, GRAYED
+    MENUITEM "&Copy\tCtrl+Ins", CM_EDITCOPY, GRAYED
+    MENUITEM "&Paste\tShift+Ins", CM_EDITPASTE, GRAYED
+    MENUITEM SEPARATOR
+    MENUITEM "Clear &All\tCtrl+Del", CM_EDITCLEAR, GRAYED
+    MENUITEM "&Delete\tDel", CM_EDITDELETE, GRAYED
+  END
+
+  POPUP "&Search"
+  BEGIN
+    MENUITEM "&Find...", CM_EDITFIND, GRAYED
+    MENUITEM "&Replace...", CM_EDITREPLACE, GRAYED
+    MENUITEM "&Next\aF3", CM_EDITFINDNEXT, GRAYED
+  END
+
+  MENUITEM SEPARATOR
+
+  MENUITEM SEPARATOR
+
+  MENUITEM SEPARATOR
+
+
+  MENUITEM SEPARATOR
+
+  POPUP "&Help"
+  BEGIN
+    MENUITEM "&About...", CM_HELPABOUT
+  END
+
+END
+
+
+// Accelerator table for short-cut to menu commands. (include/owl/editfile.rc)
+//
+IDM_SDI ACCELERATORS
+BEGIN
+  VK_DELETE, CM_EDITCUT, VIRTKEY, SHIFT
+  VK_INSERT, CM_EDITCOPY, VIRTKEY, CONTROL
+  VK_INSERT, CM_EDITPASTE, VIRTKEY, SHIFT
+  VK_DELETE, CM_EDITCLEAR, VIRTKEY, CONTROL
+  VK_BACK,   CM_EDITUNDO, VIRTKEY, ALT
+  VK_F3,     CM_EDITFINDNEXT, VIRTKEY
+END
+
+
+
+
+
+// Table of help hints displayed in the status bar.
+//
+STRINGTABLE
+BEGIN
+  -1,                   "File/document operations"
+  CM_FILENEW,           "Creates a new window"
+  CM_FILEOPEN,          "Opens a window"
+  CM_FILECLOSE,         "Closes the active document"
+  CM_FILESAVE,          "Saves the active document"
+  CM_FILESAVEAS,        "Saves the active document with a new name"
+  CM_EXIT,              "Quits Upload and prompts to save the documents"
+  CM_EDITUNDO-1,        "Edit operations"
+  CM_EDITUNDO,          "Reverses the last operation"
+  CM_EDITCUT,           "Cuts the selection and puts it on the Clipboard"
+  CM_EDITCOPY,          "Copies the selection and puts it on the Clipboard"
+  CM_EDITPASTE,         "Inserts the Clipboard contents at the insertion point"
+  CM_EDITDELETE,        "Deletes the selection"
+  CM_EDITCLEAR,         "Clears the active document"
+  CM_EDITADD,           "Inserts a new line"
+  CM_EDITEDIT,          "Edits the current line"
+  CM_EDITFIND-1,        "Search/replace operations"
+  CM_EDITFIND,          "Finds the specified text"
+  CM_EDITREPLACE,       "Finds the specified text and changes it"
+  CM_EDITFINDNEXT,      "Finds the next match"
+  CM_HELPABOUT-1,       "Access About"
+  CM_HELPABOUT,         "About the Upload application"
+END
+
+
+//
+// OWL string table
+//
+
+// EditFile (include/owl/editfile.rc and include/owl/editsear.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_CANNOTFIND,       "Cannot find ""%s""."
+  IDS_UNTITLED,         "Document"
+  IDS_UNABLEREAD,       "Unable to read file %s from disk."
+  IDS_UNABLEWRITE,      "Unable to write file %s to disk."
+  IDS_FILECHANGED,      "The text in the %s file has changed.\n\nDo you want to save the changes?"
+  IDS_FILEFILTER,       "Text files|*.txt|AllFiles|*.*|"
+END
+
+
+// Exception string resources (include/owl/except.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_OWLEXCEPTION,     "ObjectWindows Exception"
+  IDS_UNHANDLEDXMSG,    "Unhandled Exception"
+  IDS_OKTORESUME,       "OK to resume?"
+  IDS_UNKNOWNEXCEPTION, "Unknown exception"
+
+  IDS_UNKNOWNERROR,     "Unknown error"
+  IDS_NOAPP,            "No application object"
+  IDS_OUTOFMEMORY,      "Out of memory"
+  IDS_INVALIDMODULE,    "Invalid module specified for window"
+  IDS_INVALIDMAINWINDOW,"Invalid MainWindow"
+  IDS_VBXLIBRARYFAIL,   "VBX Library init failure"
+
+  IDS_INVALIDWINDOW,    "Invalid window %s"
+  IDS_INVALIDCHILDWINDOW,"Invalid child window %s"
+  IDS_INVALIDCLIENTWINDOW,"Invalid client window %s"
+
+  IDS_CLASSREGISTERFAIL,"Class registration fail for window %s"
+  IDS_CHILDREGISTERFAIL,"Child class registration fail for window %s"
+  IDS_WINDOWCREATEFAIL, "Create fail for window %s"
+  IDS_WINDOWEXECUTEFAIL,"Execute fail for window %s"
+  IDS_CHILDCREATEFAIL,  "Child create fail for window %s"
+
+  IDS_MENUFAILURE,      "Menu creation failure"
+  IDS_VALIDATORSYNTAX,  "Validator syntax error"
+  IDS_PRINTERERROR,     "Printer error"
+
+  IDS_LAYOUTINCOMPLETE, "Incomplete layout constraints specified in window %s"
+  IDS_LAYOUTBADRELWIN,  "Invalid relative window specified in layout constraint in window %s"
+
+  IDS_GDIFAILURE,       "GDI failure"
+  IDS_GDIALLOCFAIL,     "GDI allocate failure"
+  IDS_GDICREATEFAIL,    "GDI creation failure"
+  IDS_GDIRESLOADFAIL,   "GDI resource load failure"
+  IDS_GDIFILEREADFAIL,  "GDI file read failure"
+  IDS_GDIDELETEFAIL,    "GDI object %X delete failure"
+  IDS_GDIDESTROYFAIL,   "GDI object %X destroy failure"
+  IDS_INVALIDDIBHANDLE, "Invalid DIB handle %X"
+END
+
+
+// General Window's status bar messages. (include/owl/statusba.rc)
+//
+STRINGTABLE
+BEGIN
+  IDS_MODES             "EXT|CAPS|NUM|SCRL|OVR|REC"
+  IDS_MODESOFF          "   |  |   |  |   |   "
+  SC_SIZE,              "Changes the size of the window"
+  SC_MOVE,              "Moves the window to another position"
+  SC_MINIMIZE,          "Reduces the window to an icon"
+  SC_MAXIMIZE,          "Enlarges the window to it maximum size"
+  SC_RESTORE,           "Restores the window to its previous size"
+  SC_CLOSE,             "Closes the window"
+  SC_TASKLIST,          "Opens task list"
+  SC_NEXTWINDOW,        "Switches to next window"
+END
+
+
+// Validator messages (include/owl/validate.rc)
+//
+STRINGTABLE LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  IDS_VALPXPCONFORM     "Input does not conform to picture:\n""%s"""
+  IDS_VALINVALIDCHAR    "Invalid character in input"
+  IDS_VALNOTINRANGE     "Value is not in the range %ld to %ld."
+  IDS_VALNOTINLIST      "Input is not in valid-list"
+END
+
+
+//
+// Misc application definitions
+//
+
+// Application ICON
+//
+
+
+// Client Dialog
+//
+IDD_CLIENT DIALOG 6, 15, 296, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "AmaSeis Upload"
+FONT 8, "MS Sans Serif"
+{
+ CONTROL "Cancel", IDCANCEL, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 228, 76, 50, 14
+ CONTROL "", IDC_ACTIVITY, "listbox", LBS_STANDARD | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 8, 13, 272, 60
+ CONTROL "Activity", IDC_STATICTEXT1, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 4, 148, 9
+}
+
+
+// About box.
+//
+
+
+// Version info.
+//
+#if !defined(__DEBUG_)
+
+// Non-Debug VERSIONINFO
+//
+1 VERSIONINFO 
+FILEVERSION 0, 1, 0, 0
+PRODUCTVERSION 0, 1, 0, 0
+FILEFLAGSMASK 0
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+FILEOS VOS__WINDOWS16
+FILETYPE VFT_APP
+{
+ BLOCK "StringFileInfo"
+ {
+  BLOCK "040904E4"
+  {
+   VALUE "CompanyName", "\000"
+   VALUE "FileDescription", "FTP Upload for AmaSeis\000"
+   VALUE "FileVersion", "1.0\000"
+   VALUE "InternalName", "Upload\000"
+   VALUE "LegalCopyright", "Copyright © 2009. No Rights Reserved.\000"
+   VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+   VALUE "OriginalFilename", "Upload.exe\000"
+   VALUE "ProductName", "Upload\000"
+   VALUE "ProductVersion", "0.2 Level 2009.04.15\000"
+  }
+
+ }
+
+ BLOCK "VarFileInfo"
+ {
+  VALUE "Translation", 0x0409, 0x04e4
+ }
+
+}
+
+IDI_UPLOAD ICON 
+{
+ '00 00 01 00 03 00 20 20 10 00 00 00 00 00 E8 02'
+ '00 00 36 00 00 00 20 20 02 00 00 00 00 00 30 01'
+ '00 00 1E 03 00 00 10 10 10 00 00 00 00 00 28 01'
+ '00 00 4E 04 00 00 28 00 00 00 20 00 00 00 40 00'
+ '00 00 01 00 04 00 00 00 00 00 80 02 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00'
+ '00 00 80 00 80 00 80 80 00 00 80 80 80 00 C0 C0'
+ 'C0 00 00 00 FF 00 00 FF 00 00 00 FF FF 00 FF 00'
+ '00 00 FF 00 FF 00 FF FF 00 00 FF FF FF 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ 'AA AA 00 00 00 00 00 00 00 00 00 00 00 00 00 0A'
+ 'AA AA AA A0 00 00 00 00 00 00 00 00 00 00 00 00'
+ 'AA AA AA AA A0 00 00 00 00 00 00 00 00 00 00 08'
+ '0A AA AA AA AA 00 00 00 00 00 00 00 00 00 00 00'
+ '88 8A AA AA AA A0 00 00 00 00 00 00 00 00 00 00'
+ '00 08 8A AA AA AA A0 00 00 00 00 00 00 00 00 00'
+ '00 00 08 AA AA AA AA A0 00 00 00 00 00 00 00 00'
+ '00 00 00 8A AA AA AA AA 00 00 00 00 00 00 00 00'
+ '00 00 00 08 AA AA AA AA A0 00 00 00 00 00 00 00'
+ '00 00 00 08 AA AA AA AA AA 00 00 00 00 00 00 00'
+ '00 00 00 00 8A AA AA AA AA A0 00 00 00 00 00 00'
+ '00 00 00 00 8A AA AA AA AA AA 00 00 00 00 00 00'
+ '00 00 00 00 08 AA AA AA AA AA A0 00 00 00 00 00'
+ '00 00 00 00 08 AA AA AA AA AA A0 00 00 00 00 00'
+ '00 00 00 00 00 8A AA AA AA AA AA 00 00 00 00 00'
+ '00 00 00 00 00 8A AA AA AA AA AA 00 00 00 00 00'
+ '00 00 00 00 00 08 AA AA AA AA AA 00 00 00 00 00'
+ '00 00 00 00 00 08 AA AA AA AA AA A0 00 00 00 00'
+ '00 00 00 00 00 00 8A AA AA AA AA A0 00 00 00 00'
+ '00 00 00 00 00 00 8A AA AA AA AA A0 00 00 00 00'
+ '00 00 00 00 00 00 8A AA AA AA AA A0 00 00 00 00'
+ '00 00 00 00 8A AA AA AA AA AA AA AA AA 00 00 00'
+ '00 00 00 00 08 AA AA AA AA AA AA AA A0 00 00 00'
+ '00 00 00 00 00 8A AA AA AA AA AA AA 00 00 00 00'
+ '00 00 00 00 00 08 AA AA AA AA AA A0 00 00 00 00'
+ '00 00 00 00 00 00 8A AA AA AA AA 00 00 00 00 00'
+ '00 00 00 00 00 00 08 AA AA AA A0 00 00 00 00 00'
+ '00 00 00 00 00 00 00 8A AA AA 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 08 AA A0 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 8A 00 00 00 00 00 FF FF'
+ 'FF FF FF FF FF FF F0 1F FF FF E0 07 FF FF F0 03'
+ 'FF FF E8 01 FF FF F0 00 7F FF FE 00 1F FF FF 80'
+ '0F FF FF C0 07 FF FF E0 03 FF FF E0 01 FF FF F0'
+ '00 FF FF F0 00 7F FF F8 00 3F FF F8 00 3F FF FC'
+ '00 1F FF FC 00 1F FF FE 00 1F FF FE 00 0F FF FF'
+ '00 0F FF FF 00 0F FF FF 00 0F FF F0 00 03 FF F8'
+ '00 07 FF FC 00 0F FF FE 00 1F FF FF 00 3F FF FF'
+ '80 7F FF FF C0 FF FF FF E1 FF FF FF F3 FF 28 00'
+ '00 00 20 00 00 00 40 00 00 00 01 00 01 00 00 00'
+ '00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 FF FF FF 00 00 00'
+ '00 00 00 00 00 00 3F FF FF FF 3F FF FF FF 3F FF'
+ '01 FF 3F FF EF FF 3F FF EF FF 3F FF EF FF 00 00'
+ '00 00 00 00 00 00 3F FF FF F5 3F FF FF F3 3F FF'
+ 'FF E7 3F FF FF C3 3F FF FF A3 3F FF FF 63 3F FF'
+ 'FC FF 3F FF FB FF 3F FF F7 FF 3F FF CF FF 3F FF'
+ 'BF FF 3F FE 7F FF 3F FD FF FF 3F FB FF FF 3F E7'
+ 'FF FF 3F DF FF FF 3F BF FF FF 3E 7F FF FF 3D FF'
+ 'FF FF 3B FF FF FF 27 FF FF FF 1F FF FF FF 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 00 00 28 00'
+ '00 00 10 00 00 00 20 00 00 00 01 00 04 00 00 00'
+ '00 00 C0 00 00 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80'
+ '00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80'
+ '00 00 80 80 80 00 C0 C0 C0 00 00 00 FF 00 00 FF'
+ '00 00 00 FF FF 00 FF 00 00 00 FF 00 FF 00 FF FF'
+ '00 00 FF FF FF 00 00 00 00 00 00 00 00 00 00 00'
+ '00 00 00 00 00 00 08 AA AA 00 00 00 00 00 00 8A'
+ 'AA AA 00 00 00 00 00 08 AA AA A0 00 00 00 00 00'
+ '8A AA AA 00 00 00 00 00 08 AA AA A0 00 00 00 00'
+ '00 8A AA AA 00 00 00 00 00 08 AA AA 00 00 00 00'
+ '00 08 AA AA A0 00 00 00 00 08 AA AA A0 00 00 00'
+ '08 AA AA AA AA A0 00 00 00 8A AA AA AA 00 00 00'
+ '00 08 AA AA A0 00 00 00 00 00 8A AA 00 00 00 00'
+ '00 00 08 A0 00 00 FF FF 00 00 E3 FF 00 00 80 FF'
+ '00 00 C0 7F 00 00 E0 3F 00 00 F0 1F 00 00 F8 0F'
+ '00 00 FC 07 00 00 FE 07 00 00 FE 03 00 00 FE 01'
+ '00 00 F8 01 00 00 FC 03 00 00 FE 07 00 00 FF 0F'
+ '00 00 FF 9F 00 00'
+}
+
+
+#else
+
+// Debug VERSIONINFO
+//
+1 VERSIONINFO LOADONCALL MOVEABLE
+FILEVERSION 1, 0, 0, 0
+PRODUCTVERSION 1, 0, 0, 0
+FILEFLAGSMASK VS_FF_DEBUG | VS_FF_PRERELEASE | VS_FF_PATCHED | VS_FF_PRIVATEBUILD | VS_FF_SPECIALBUILD
+FILEFLAGS VS_FFI_FILEFLAGSMASK
+#if defined(BI_PLAT_WIN32)
+FILEOS VOS__WINDOWS32
+#else
+FILEOS VOS__WINDOWS16
+#endif
+FILETYPE VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    // Language type = U.S. English(0x0409) and Character Set = Windows, Multilingual(0x04e4)
+    BLOCK "040904E4"              // Matches VarFileInfo Translation hex value.
+    BEGIN
+      VALUE "CompanyName", "\000"
+      VALUE "FileDescription", "Upload for Windows\000"
+      VALUE "FileVersion", "1.0\000"
+      VALUE "InternalName", "Upload\000"
+      VALUE "LegalCopyright", "Copyright © 1997. All Rights Reserved.\000"
+      VALUE "LegalTrademarks", "Windows(TM) is a trademark of Microsoft Corporation\000"
+      VALUE "OriginalFilename", "Upload.exe\000"
+      VALUE "ProductName", "Upload\000"
+      VALUE "ProductVersion", "1.0\000"
+      VALUE "SpecialBuild", "Debug Version\000"
+      VALUE "PrivateBuild", "Built by \000"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x0409, 0x04e4    // U.S. English(0x0409) & Windows Multilingual(0x04e4) 1252
+  END
+END
+
+#endif

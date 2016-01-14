@@ -1,0 +1,595 @@
+//----------------------------------------------------------------------------
+//  Project AS1
+//  RunTime Software
+//  Copyright © 2000. All Rights Reserved.
+//
+//  SUBSYSTEM:    AS1 Application
+//  FILE:         as1.h
+//  AUTHOR:       Alan Jones
+//
+//  OVERVIEW
+//  ~~~~~~~~
+//  Constant definitions for all resources defined in as1.rc.
+//
+//----------------------------------------------------------------------------
+#if !defined(as1_rh)   // Sentry use file only if it's not already included.
+#define IDD_INPUT	24
+#define IDD_FORWARD_BACKWARD	21
+#define IDD_PROGRESS	22
+#define IDD_DIALOG20	20
+#define IDD_MAGNITUDE_MBLG	19
+#define IDD_MAGNITUDE_MS	18
+#define CM_NOW	27641
+#define IDD_DIALOG_FILTER	17
+#define IDD_FILTER_HIGH_PASS	16
+#define IDD_FILTER_LOW_PASS	15
+#define IDD_FILTER_LP	14
+#define IDD_SCALE_DIALOG	13
+#define IDC_CHECKBOX1	101
+#define IDC_AUTO_SCALING	101
+#define IDD_MAGNITUDE	12
+#define IDC_EDIT4	101
+#define IDC_INPUT	101
+#define IDC_LONG_NP	101
+#define IDC_RAW_AMPLITUDE	101
+#define IDD_CALIBRATION	11
+#define IDC_EDIT5	101
+#define IDC_CAL_MASS	101
+#define CM_RADIO_FREQUENCY	11911
+#define CM_RADIO_PERIOD	11910
+#define CM_SPINPERIOD	11909
+#define IDD_SEISSTATION	11
+#define CM_TIME_ACCEL	18898
+#define CM_SPIN_TIME_ACCEL	18899
+#define IDD_COM_PORT	10
+#define CM_STOP	24502
+#define CM_PLAY	24501
+#define IDD_DEVICE	9
+#define IDC_COMBOBOX1	101
+#define CM_AMPLITUDE	11907
+#define CM_TIME	11906
+#define IDD_DIALOG8	8
+#define IDD_ZTIME_DIALOG	8
+#define IDD_DIALOG7	7
+#define IDD_DATEDIALOG	6
+#define IBM_TRIM	2345
+#define IDM_MENU2	2
+#define CM_SHOW_DATA	11851
+#define IDD_DATA_VALUES	29001
+#define IDD_SET_ZERO	29002
+#define IDC_EDIT17	101
+#define IDC_COM_PORT	101
+#define IDC_Z_YEAR	101
+#define IDC_D_YEAR	101
+#define IDC_SET_ZERO	101
+#define CM_SPINTIMEX	11904
+#define CM_TIMEEXPANSION	11903
+#define CM_SPINGAIN	11902
+#define CM_GAINQUERY	11901
+#define CM_PICK	11846
+#define IDD_DEPTH	5
+#define CM_BACK	24500
+#define IDD_PICK	25
+#define CM_EVENTDIALOG	25025
+#define IDD_EVENTDIALOG	4
+#define IDS_VERSION	111
+#define IDS_PROJECT	110
+#define IDD_STATION	3
+#define IDD_CONTINUOUS	309
+#define IDD_FILTER	2
+#define IDC_DAYS_TO_RETAIN 202
+#define IDC_EDIT1	102
+#define IDC_MAX_AMPLITUDE	102
+#define IDC_Z_MONTH	102
+#define IDC_DEPTH	134
+#define IDC_EVENT_NAME	102
+#define IDC_EDIT2	105
+#define IDC_LP_LP	105
+#define IDC_INST_RESPONSE	103
+#define IDC_STATICTEXT23	120
+#define IDC_STATICTEXT37	121
+#define IDC_MOMENT_INERTIA	105
+#define IDC_EVENT_LATITUDE	104
+#define IDC_EDIT3	106
+#define IDC_EVENT_LONGITUDE	106
+#define IDC_STATICTEXT10	107
+#define IDC_EDIT29	108
+#define IDC_NETWORK_ID	108
+#define IDC_ARM_LENGTH	107
+#define IDC_EDIT20	109
+#define IDC_STATICTEXT22	110
+#define IDC_EVENT_DEPTH	108
+#define IDC_BUTTON1	110
+#define IDC_YEAR_FORWARD	110
+#define IDC_BUTTON9	111
+#define IDC_FB_NOW	111
+#define IDC_FORWARD_BACKWARD	112
+#define IDC_BUTTON10	112
+#define IDC_CLOSE	111
+#define IDC_MONTH_FORWARD	109
+#define IDC_WEEK_FORWARD	108
+#define IDC_DAY_FORWARD	107
+#define IDC_STATICTEXT27	134
+#define IDC_STATICTEXT28	135
+#define IDC_EDIT23	136
+#define IDC_ORIGIN_MONTH	136
+#define IDC_EDIT25	138
+#define IDC_ORIGIN_DAY	138
+#define IDC_EDIT26	139
+#define IDC_ORIGIN_MINUTE	139
+#define IDC_EDIT27	140
+#define IDC_ORIGIN_SECOND	140
+#define IDC_STATICTEXT29	141
+#define IDC_STATICTEXT30	142
+#define IDC_STATICTEXT31	143
+#define IDC_STATICTEXT32	144
+#define IDC_STATICTEXT33	145
+#define IDC_STATICTEXT34	146
+#define IDC_STATICTEXT35	124
+#define IDC_RESPONSE_TABLE	124
+#define IDC_STATICFRAME1	122
+#define IDC_ORIGIN	124
+#define IDC_STATICTEXT36	148
+#define IDC_EDIT28	149
+#define IDC_SEISMIC_WAVES	149
+#define IDC_ORIGIN_HOUR	147
+#define IDC_ORIGIN_YEAR	137
+#define IDC_EDIT24	137
+#define IDC_ORIGIN_TIME	148
+#define IDC_CREATE_EVT	110
+#define IDC_EVENT_MAGNITUDE	110
+#define IDC_DECIMATE 204
+#define IDC_CHECKBOX2	102
+#define IDC_FILTER	102
+#define IDC_BUTTON5	103
+#define IDC_DAY_BACK	103
+#define IDC_BUTTON6	104
+#define IDC_WEEK_BACK	104
+#define IDC_FILTER_HIGH_PASS_PARAMETERS	103
+#define IDC_HIGH_PASS_PARAMETERS	103
+#define IDC_COMBOBOX2	107
+#define IDC_LOW_PASS_PARAMETERS	108
+#define IDC_FILTER_LOW_PASS_PARAMETERS	108
+#define IDC_RADIOBUTTON1	102
+#define IDC_RADIOBUTTON2	103
+#define IDC_RADIOBUTTON3	107
+#define IDC_RB_LONGPERIOD	107
+#define IDC_BUTTON3	108
+#define IDC_BUTTON2	109
+#define IDC_FILTER_PARAMETERS	108
+#define IDC_RADIOBUTTON6	109
+#define IDC_ENABLE_LOW_PASS	106
+#define IDC_ENABLE	106
+#define IDC_FREQ	103
+#define IDC_HZ	127
+#define IDC_SEC	104
+#define IDC_CHECKBOX3	106
+#define IDC_NOFILTER	102
+#define IDC_BWCCCHECK1	102
+#define IDC_GLITCH_REMOVAL	13133
+#define IDC_STATICTEXT4	101
+#define IDC_PROGRESS_MSG	101
+#define IDC_PICK_INSTRUCTIONS	3179
+#define IDD_PICK_INSTRUCTIONS	20
+#define IDC_LOW_PASS_PERIOD	107
+#define IDD_WAIT	7
+#define IDC_LEVEL	101
+#define IDC_CUTOFF	101
+#define IDC_STATICTEXT3	102
+#define IDC_INPUT_PROMPT	102
+#define IDD_SHOWDATA	29001
+#define IDC_EDIT16	103
+#define IDC_LOW_PASS_HZ	127
+#define IDC_BUTTON4	105
+#define IDC_MONTH_BACK	105
+#define IDC_BUTTON7	106
+#define IDC_YEAR_BACK	106
+#define IDC_BUTTON8	107
+#define IDC_LOW_PASS_UPDATE	105
+#define IDC_RADIOBUTTON4	104
+#define IDC_RADIOBUTTON5	105
+#define IDC_LOW_PASS_FREQ	103
+#define IDC_LOW_PASS_S	104
+#define IDC_LP_Q	103
+#define IDC_PERIOD	107
+#define IDC_CAL_DISTANCE	103
+#define IDC_Z_DAY	103
+#define IDC_D_MONTH	103
+#define IDC_CUTOFF_2	103
+#define IDC_CUTOFF_1	101
+#define IDC_ARRIVAL_NUMBER	102
+#define IDC_DONE	5
+#define IDC_STATION_NAME	102
+#define IDC_STATICTEXT1	103
+#define IDC_COMBODEVICE	101
+#define IDC_STATION_CODE	104
+#define IDC_STATICTEXT5	105
+#define IDC_STATICTEXT6	106
+#define IDC_LP_NP	101
+#define IDC_AMPLITUDE_MICRONS	133
+#define IDC_EDIT19	107
+#define IDC_Z_HOUR	107
+#define IDC_D_HOUR	107
+#define IDC_STATICTEXT21	108
+#define IDC_CHECKBOX4	109
+#define IDC_CURRENT_TIME	109
+#define IDC_COMPUTE	109
+#define IDC_EDIT21	110
+#define IDC_GCARC	110
+#define IDC_STATICBITMAP1	109
+#define IDC_STATICTEXT7	109
+#define IDC_HORIZONTAL_TIME_LIMIT	109
+#define IDC_HTL_STATIC	109
+#define IDC_STATICTEXT17	125
+#define IDC_STATICTEXT18	126
+#define IDC_STATICTEXT19	127
+#define IDC_EDIT13	128
+#define IDC_EDIT14	129
+#define IDC_EDIT15	130
+#define IDC_EVENT_MS	131
+#define IDC_EVENT_ML	132
+#define IDC_EVENT_MB	130
+#define IDC_ELEVATION	110
+#define IDC_STATICTEXT8	111
+#define IDC_EDIT22	112
+#define IDC_STATICTEXT11	112
+#define IDC_Q	112
+#define IDC_Z_SECONDS	109
+#define IDC_Z_MINUTE	108
+#define IDC_Z_SECONS	109
+#define IDC_STATICTEXT12	113
+#define IDC_STATICTEXT24	114
+#define IDC_STATICTEXT26	116
+#define IDC_LOG	116
+#define IDC_STATICTEXT25	115
+#define IDC_MB	106
+#define IDC_EDIT6	114
+#define IDC_EVENT_YEAR	114
+#define IDC_EDIT7	115
+#define IDC_EVENT_MONTH	115
+#define IDC_EDIT8	116
+#define IDC_EVENT_DAY	116
+#define IDC_STATICTEXT13	117
+#define IDC_STATICTEXT9	118
+#define IDC_EDIT30	119
+#define IDC_CALIBRATION_FILE	119
+#define IDC_STATICTEXT14	118
+#define IDC_STATICTEXT15	119
+#define IDC_EDIT9	120
+#define IDC_EVENT_HOUR	120
+#define IDC_EDIT10	121
+#define IDC_EVENT_MINUTE	121
+#define IDC_EDIT11	122
+#define IDC_EVENT_SECOND	122
+#define IDC_STATICTEXT16	123
+#define IDC_EDIT12	124
+#define IDC_EVENT_MW	133
+#define IDC_STATICTEXT20	128
+#define IDC_E	114
+#define IDC_N	115
+#define IDC_Z	116
+#define IDC_LONGITUDE	113
+#define IDC_LATITUDE	112
+#define IDC_STATICTEXT2	104
+#define IDC_EDIT18	105
+#define IDC_D_DAY	105
+#define IDC_UPDOWN1	105
+#define IDC_UPDOWN2	106
+#define IDC_UD_X	106
+#define IDC_UD_GAIN	105
+#define IDC_UDGAIN	105
+#define IDD_GAIN_TIME_X	1
+#define IDC_TIME_MAGNIFY	102
+#define IDC_GAIN	131
+#define IDM_MENU1	1
+#define CM_SCROLLBAR_VERT	25009
+#define CM_SCROLLBAR	25008
+#define CM_START_BUTTON	25004
+#define CM_EXTRACT_EQ	25003
+#define CM_CREATE_EQ	25002
+#define as1_rh
+
+
+//
+// Application specific definitions:
+//
+#define IDI_MDIAPPLICATION      1001            // Application icon
+#define IDI_DOC                 1002            // MDI child window icon
+
+#define IDM_MDI                 100             // Menu resource ID and Accelerator IDs
+#define CM_ITEM5	18874
+#define CM_DELETE	11870
+#define CM_CONTROLITEM20	18874
+#define CM_UPLOAD_24	11870
+#define CM_CONTROLITEM19	18874
+#define CM_CONTROLITEM18	18874
+#define CM_WORLD	11870
+#define CM_CONTROLITEM17	18874
+#define CM_FORWARD_BACKWARD	11869
+#define CM_SETTINGSITEM12	18874
+#define CM_MAGNITUDEM_MS	11867
+#define CM_MAGNITUDE_MBLG	11868
+#define CM_MAGNITUDE_MS	11867
+#define CM_POPUPITEM18	18877
+#define CM_POPUPITEM17	18876
+#define CM_POPUPITEM16	18875
+#define CM_CONTROLITEM16	18874
+#define CM_SETTINGSITEM11	18874
+#define CM_FILTER_HIGH_PASS	11866
+#define CM_FILTERITEM2	18874
+#define CM_FILTER_LONG_FFT	11866
+#define CM_FILTERITEM1	18874
+#define CM_FILTER_LONG	11865
+#define CM_FILTERITEM3	18875
+#define CM_POPUPITEM3	18874
+#define CM_FFT_LINEAR	11864
+#define CM_FOURIERTRANSFORMITEM2	18874
+#define CM_POPUPITEM2	18874
+#define CM_SCALE	11854
+#define CM_CONTROLITEM15	18874
+#define CM_SW	11863
+#define CM_SETTINGSITEM10	18874
+#define CM_MAGNITUDE	11862
+#define CM_CONTROLITEM14	18874
+#define CM_INST_RESPONSE	11861
+#define CM_CONTROLITEM13	18874
+#define CM_CALIBRATION	11860
+#define CM_SETTINGSITEM9	18874
+#define CM_FFT	11859
+#define CM_CONTROLITEM12	18874
+#define CM_CREATE_EVT	11860
+#define CM_CREATED_EVT	11859
+#define CM_CONTROLITEM11	18874
+#define CM_S_STATION	11858
+#define CM_SETTINGSITEM8	18874
+#define CM_COM_PORT	11857
+#define CM_SETTINGSITEM7	18874
+#define CM_UNFILTER	11856
+#define CM_CONTROLITEM10	18874
+#define CM_DEVICE	11855
+#define CM_SETTINGSITEM6	18874
+#define CM_ZTIME	11854
+#define CM_SETTINGSITEM5	18874
+#define CM_DATE_TIME	11853
+#define CM_SETTINGSITEM4	18874
+#define CM_MEDIAN_FILTER	11852
+#define CM_CONTROLITEM9	18874
+#define CM_SETTINGSITEM3	18874
+#define CM_ZERO_LEVEL	11851
+#define CM_SET_ZERO	11850
+#define CM_SETTINGSITEM2	18874
+#define CM_HELP_TOPICS	11849
+#define CM_HELPITEM1	18874
+#define CM_TRAVEL_TIME	11848
+#define CM_CONTROLITEM8	18874
+#define CM_ITEM6	18874
+#define CM_ARRIVAL	11846
+#define CM_CONTROLITEM7	18874
+#define CM_SETTINGSSTATION1	18873
+#define CM_SETTINGS_EVENT	11847
+#define CM_SETTINGSITEM1	18873
+#define CM_ITEM4	18873
+#define CM_SETTINGS	11842
+#define CM_STATION	11846
+#define CM_POPUPITEM4	18873
+#define CM_CONTROLITEM6	18873
+#define CM_BITMAP	11845
+#define CM_FILEITEM2	18873
+#define CM_FILEITEM1	18873
+#define CM_FILTER	11844
+#define CM_CONTROLITEM5	18873
+#define CM_ITEM3	18873
+#define CM_CONTROLITEM4	18873
+#define CM_MDIFILESAVE	24333
+//#define CM_FILEOPEN	11843
+#define CM_CONTINUOUS	11842
+#define CM_CONTROLITEM3	18873
+#define CM_CONTROLITEM1	18873
+#define CM_ITEM1	18873
+#define CM_ITEM2	18874
+#define CM_GAIN	11843
+#define CM_CONTROLITEM2	18873
+#define CM_TIME_MAGNIFY	11842
+#define CM_POPUPITEM1	18874
+
+#define IDM_PRINTPREVIEW        200             // Accelerator ID for Print Preview window.
+
+//
+// CM_FILEnnnn commands (include/owl/editfile.rh except for CM_FILEPRINTPREVIEW)
+//
+#define CM_MDIFILENEW           24331
+#define CM_MDIFILEOPEN          24332
+#define CM_FILECLOSE            24339
+#define CM_FILESAVE	24333
+#define CM_FILESAVEAS           24334
+#define CM_FILEPRINT            24337
+#define CM_FILEPRINTERSETUP     24338
+#define CM_FILEPRINTPREVIEW     24340
+
+
+//
+// Window commands (include/owl/window.rh)
+//
+#define CM_EXIT                 24310
+
+
+//
+// CM_EDITnnnn commands (include/owl/window.rh)
+//
+#define CM_EDITUNDO             24321
+#define CM_EDITCUT              24322
+#define CM_EDITCOPY             24323
+#define CM_EDITPASTE            24324
+#define CM_EDITDELETE           24325
+#define CM_EDITCLEAR            24326
+#define CM_EDITADD              24327
+#define CM_EDITEDIT             24328
+
+
+//
+// Search menu commands (include/owl/editsear.rh)
+//
+#define CM_EDITFIND             24351
+#define CM_EDITREPLACE          24352
+#define CM_EDITFINDNEXT         24353
+
+
+//
+// Windows menu commands (include/owl/mdi.rh)
+//
+#define CM_CASCADECHILDREN      24361
+#define CM_TILECHILDREN         24362
+#define CM_TILECHILDRENHORIZ    24363
+#define CM_ARRANGEICONS         24364
+#define CM_CLOSECHILDREN        24365
+#define CM_CREATECHILD          24366
+
+
+//
+// Help menu commands.
+//
+#define CM_HELPABOUT            2009
+
+
+//
+// About Dialogs
+//
+#define IDD_ABOUT               22000
+#define IDC_VERSION             22001
+#define IDC_COPYRIGHT           22002
+#define IDC_DEBUG               22003
+
+
+//
+// OWL defined strings
+//
+
+//
+// Statusbar
+//
+#define IDS_MODES               32530
+#define IDS_MODESOFF            32531
+
+//
+// EditFile
+//
+#define IDS_UNTITLED            32550
+#define IDS_UNABLEREAD          32551
+#define IDS_UNABLEWRITE         32552
+#define IDS_FILECHANGED         32553
+#define IDS_FILEFILTER          32554
+
+//
+// EditSearch
+//
+#define IDS_CANNOTFIND          32540
+
+
+//
+// General & application exception messages (include/owl/except.rh)
+//
+#define IDS_UNKNOWNEXCEPTION    32767
+#define IDS_OWLEXCEPTION        32766
+#define IDS_OKTORESUME          32765
+#define IDS_UNHANDLEDXMSG       32764
+#define IDS_UNKNOWNERROR        32763
+#define IDS_NOAPP               32762
+#define IDS_OUTOFMEMORY         32761
+#define IDS_INVALIDMODULE       32760
+#define IDS_INVALIDMAINWINDOW   32759
+#define IDS_VBXLIBRARYFAIL      32758
+
+//
+// Owl 1 compatibility messages
+//
+#define IDS_INVALIDWINDOW       32709
+#define IDS_INVALIDCHILDWINDOW  32708
+#define IDS_INVALIDCLIENTWINDOW 32707
+
+//
+// TXWindow messages
+//
+#define IDS_CLASSREGISTERFAIL   32749
+#define IDS_CHILDREGISTERFAIL   32748
+#define IDS_WINDOWCREATEFAIL    32747
+#define IDS_WINDOWEXECUTEFAIL   32746
+#define IDS_CHILDCREATEFAIL     32745
+
+#define IDS_MENUFAILURE         32744
+#define IDS_VALIDATORSYNTAX     32743
+#define IDS_PRINTERERROR        32742
+
+#define IDS_LAYOUTINCOMPLETE    32741
+#define IDS_LAYOUTBADRELWIN     32740
+
+//
+// TXGdi messages
+//
+#define IDS_GDIFAILURE          32739
+#define IDS_GDIALLOCFAIL        32738
+#define IDS_GDICREATEFAIL       32737
+#define IDS_GDIRESLOADFAIL      32736
+#define IDS_GDIFILEREADFAIL     32735
+#define IDS_GDIDELETEFAIL       32734
+#define IDS_GDIDESTROYFAIL      32733
+#define IDS_INVALIDDIBHANDLE    32732
+
+
+//
+// Printing error message string resource IDs (include/owl/printer.rh)
+//
+#define IDS_PRNON               32590
+#define IDS_PRNERRORTEMPLATE    32591
+#define IDS_PRNOUTOFMEMORY      32592
+#define IDS_PRNOUTOFDISK        32593
+#define IDS_PRNCANCEL           32594
+#define IDS_PRNMGRABORT         32595
+#define IDS_PRNGENERROR         32596
+#define IDS_PRNERRORCAPTION     32597
+
+
+//
+// Printer abort dialog & control IDs
+//
+#define IDD_ABORTDIALOG         32599            // keep different than any string IDs
+#define ID_TITLE                101              // Document title text control
+#define ID_DEVICE               102              // Device & optional port text control
+#define ID_PORT                 103              // Old port text control, unused
+#define ID_PAGE                 104              // Page # text control
+
+
+//
+// Print Preview
+//
+#define APX_PPR_PREVIOUS        24500
+#define APX_PPR_NEXT            24501
+#define APX_PPR_ONEUP           24502
+#define APX_PPR_TWOUP           24503
+#define APX_PPR_CURRPAGE        24504
+#define APX_PPR_DONE            24505
+
+
+//
+// TInputDialog DIALOG resource (include/owl/inputdia.rh)
+//
+#define ID_PROMPT               4091
+#define ID_INPUT                4090
+
+
+//
+// TSlider bitmaps (horizontal and vertical) (include/owl/slider.rh)
+//
+#define IDB_HSLIDERTHUMB        32000
+#define IDB_VSLIDERTHUMB        32001
+
+
+//
+// Validation messages (include/owl/validate.rh)
+//
+#define IDS_VALPXPCONFORM       32520
+#define IDS_VALINVALIDCHAR      32521
+#define IDS_VALNOTINRANGE       32522
+#define IDS_VALNOTINLIST        32523
+
+
+#endif  // as1_rh
